@@ -1,5 +1,7 @@
 # Shell Scripting Tutorial
 
+[Learing Linux](https://linuxjourney.com/)
+
 [Tutorial Link](https://www.youtube.com/watch?v=cQepf9fY6cE&list=PLS1QulWo1RIYmaxcEqw5JhK3b-6rgdWO_&ab_channel=ProgrammingKnowledge)
 
 ## Display List of Shell System Support
@@ -207,4 +209,99 @@ If we run the script by `./4-passing-arguments.sh First "2nd Second" third`, the
 ```text
 ./4-passing-arguments.sh First 2nd Second third > $0 $1 $2 $3
 First 2nd Second third
+```
+
+## If Statement ( If then , If then else, If elif else)
+
+[Tutorial Comparison Operators](http://www.codebind.com/linux-tutorials/bash-shell-scripting-statement-fi-else-fi-elif-else-fi/)
+
+[String Comparison Operators](https://devmanual.gentoo.org/tools-reference/bash/index.html#string-comparison-in-bash)
+
+[String Tests Operators](https://devmanual.gentoo.org/tools-reference/bash/index.html#string-tests-in-bash)
+
+[Integer Comparison Operators](https://devmanual.gentoo.org/tools-reference/bash/index.html#integer-comparison-in-bash)
+
+[File Tests Operators](https://devmanual.gentoo.org/tools-reference/bash/index.html#file-tests-in-bash)
+
+[File Comparison Operators](https://devmanual.gentoo.org/tools-reference/bash/index.html#file-comparison-in-bash)
+
+[Boolean Algebra Operators](https://devmanual.gentoo.org/tools-reference/bash/index.html#boolean-algebra-in-bash)
+
+### Number Comparisons Operators
+
+```text
+-eq - is equal to - if [ "$a" -eq "$b" ]
+
+-ne - is not equal to - if [ "$a" -ne "$b" ]
+
+-gt - is greater than - if [ "$a" -gt "$b" ]
+
+-ge - is greater than or equal to - if [ "$a" -ge "$b" ]
+
+-lt - is less than - if [ "$a" -lt "$b" ]
+
+-le - is less than or equal to - if [ "$a" -le "$b" ]
+
+< - is less than - (("$a" < "$b"))
+
+<= - is less than or equal to - (("$a" <= "$b"))
+
+> - is greater than - (("$a" > "$b"))
+
+>= - is greater than or equal to - (("$a" >= "$b"))
+```
+
+### String Comparisons
+
+```text
+= - is equal to - if [ "$a" = "$b" ]
+
+== - is equal to - if [ "$a" == "$b" ]
+
+!= - is not equal to - if [ "$a" != "$b" ]
+
+< - is less than, in ASCII alphabetical order - if [[ "$a" < "$b" ]]
+
+> - is greater than, in ASCII alphabetical order - if [[ "$a" > "$b" ]]
+
+-z - string is null, that is, has zero length
+```
+
+Example
+
+```bash
+#!/bin/bash
+
+# Declare variables
+first=10
+second=5
+word="abcd"
+
+# Check if the value of 'first' is greater than 9
+if [ $first -gt 9 ]
+then
+    echo "First Condition is true"
+else
+    echo "Condition not true"
+fi
+
+# Use double parentheses to evaluate the arithmetic expression for the 'second' variable
+if (($second > 9))
+then
+    echo "Second Condition is true"
+else
+    echo "Second Condition not true"
+fi
+
+# Check if the value of 'word' is equal to "abc" or "abcd"
+if [ $word == "abc" ]
+then
+    echo "1st Word matched"
+elif [ $word == "abcd" ] 
+then
+    echo "2nd word match"
+else
+    echo "Word Not Matched"
+fi
+
 ```
