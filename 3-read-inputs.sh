@@ -35,5 +35,5 @@
 echo "Input name"
 read 
 
-# Display the first two names
-echo "Name is ${REPLY}}"
+# Display the Default variable
+echo "Name is ${REPLY}"
