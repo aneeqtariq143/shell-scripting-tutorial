@@ -369,3 +369,32 @@ else
     echo "Directory not Exist"
 fi
 ```
+
+```bash
+#!/bin/bash
+
+# Prompt the user to enter the name of the file
+echo "Enter the name of the file : \c"
+
+# Read the input from the user and store it in the variable 'file_name'
+read file_name
+
+# Check if the file exists
+if [ -f ${file_name} ]
+then
+    # Check if the file is writable
+    if [ -w ${file_name} ]
+    then
+        # Prompt the user to type some text data and append it to the file
+        echo "Type some text data. To quit, press ctrl+d."
+        cat >> ${file_name}
+    else
+        # Notify the user that the file does not have write permissions
+        echo "The file does not have write permissions."
+    fi
+else
+    # Notify the user that the specified file does not exist
+    echo "${file_name} does not exist."
+fi
+
+```
