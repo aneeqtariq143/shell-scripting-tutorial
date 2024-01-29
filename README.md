@@ -221,10 +221,6 @@ First 2nd Second third
 
 [Integer Comparison Operators](https://devmanual.gentoo.org/tools-reference/bash/index.html#integer-comparison-in-bash)
 
-[File Tests Operators](https://devmanual.gentoo.org/tools-reference/bash/index.html#file-tests-in-bash)
-
-[File Comparison Operators](https://devmanual.gentoo.org/tools-reference/bash/index.html#file-comparison-in-bash)
-
 [Boolean Algebra Operators](https://devmanual.gentoo.org/tools-reference/bash/index.html#boolean-algebra-in-bash)
 
 ### Number Comparisons Operators
@@ -304,4 +300,72 @@ else
     echo "Word Not Matched"
 fi
 
+```
+
+## Check File
+
+[File Tests Operators](https://devmanual.gentoo.org/tools-reference/bash/index.html#file-tests-in-bash)
+
+[File Comparison Operators](https://devmanual.gentoo.org/tools-reference/bash/index.html#file-comparison-in-bash)
+
+### Check File Exist of not
+
+```bash
+#!/bin/bash
+
+echo -e "Enter the name of File that you want to check exist or not : \c"
+read file_name
+
+if [ -e $file_name ] 
+then
+    echo "File Exist"
+else
+    echo "File not Exist"
+fi
+```
+
+### Check File is regular type
+
+```bash
+#!/bin/bash
+
+echo -e "Enter the name of File that you want to check file is regular or not : \c"
+read file_name
+
+if [ -f $file_name ] 
+then
+    echo "File Exist"
+else
+    echo "File not Exist"
+fi
+```
+
+### Check if the file is empty
+
+```bash
+#!/bin/bash
+
+echo -e "Enter the File name that you want to check if empty or not : \c"
+read file_name
+
+if [ -s $file_name ] 
+then
+    echo "File Not Empty"
+else
+    echo "File Empty"
+fi
+```
+
+### Check Directory Exist of not
+
+```bash
+echo -e "Enter the name of the directory that you want to check : \c"
+read directory_name
+
+if [ -d $directory_name ] 
+then
+    echo "Directory Exist"
+else
+    echo "Directory not Exist"
+fi
 ```
